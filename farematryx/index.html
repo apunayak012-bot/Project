@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farematryx | Smart Flight Fare Analytics &amp; Booking Recommendation System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="images/logo.jpg" alt="Logo">
+
+        <h2>Farematryx</h2>
+
+    </div>
+
+    <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#booking">Prediction</a></li>
+
+        <li><a href="#prices">Prices</a></li>
+
+        <li><a href="#features">Features</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+        <li><button type="button" id="themeBtn" class="theme-btn" aria-label="Toggle dark mode">🌙</button></li>
+
+    </ul>
+
+</nav>
+
+<!-- ===================== HERO ===================== -->
+
+<header id="home" class="hero">
+
+<div class="overlay">
+
+<h1>
+
+✈ Smart Flight Fare Analytics
+
+</h1>
+
+<p>
+
+Predict Flight Ticket Prices using Machine Learning and get
+Smart Booking Recommendations.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#booking" class="btn">
+
+Predict Fare
+
+</a>
+
+<a href="#prices" class="btn2">
+
+View Analytics
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ===================== STATS ===================== -->
+
+<section class="stats">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-plane"></i>
+
+<h2>10+</h2>
+
+<p>Airlines</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-route"></i>
+
+<h2>200+</h2>
+
+<p>Routes</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2>50K+</h2>
+
+<p>Predictions</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h2>90%</h2>
+
+<p>Model Accuracy</p>
+
+</div>
+
+</section>
+
+<!-- ===================== BOOKING ===================== -->
+
+<section id="booking" class="booking">
+
+<h1>
+
+Flight Fare Prediction
+
+</h1>
+
+<p>
+
+Enter your travel details below.
+
+</p>
+
+<div class="booking-form">
+
+<div class="box">
+
+<label for="airline">Airline</label>
+
+<select id="airline">
+
+<option>IndiGo</option>
+
+<option>Air India</option>
+
+<option>Vistara</option>
+
+<option>SpiceJet</option>
+
+<option>AirAsia</option>
+
+</select>
+
+</div>
+
+<div class="box">
+
+<label for="source">Source City</label>
+
+<select id="source">
+
+<option>Delhi</option>
+
+<option>Mumbai</option>
+
+<option>Hyderabad</option>
+
+<option>Bangalore</option>
+
+<option>Chennai</option>
+
+<option>Kolkata</option>
+
+</select>
+
+</div>
+
+<div class="box">
+
+<label for="destination">Destination</label>
+
+<select id="destination">
+
+<option>Delhi</option>
+
+<option selected>Mumbai</option>
+
+<option>Hyderabad</option>
+
+<option>Bangalore</option>
+
+<option>Chennai</option>
+
+<option>Kolkata</option>
+
+</select>
+
+</div>
+
+<div class="box">
+
+<label for="class">Class</label>
+
+<select id="class">
+
+<option>Economy</option>
+
+<option>Business</option>
+
+</select>
+
+</div>
+
+<div class="box">
+
+<label for="stops">Stops</label>
+
+<select id="stops">
+
+<option>Non Stop</option>
+
+<option>1 Stop</option>
+
+<option>2 Stops</option>
+
+</select>
+
+</div>
+
+<div class="box">
+
+<label for="duration">Duration (Hours)</label>
+
+<input type="number" id="duration" min="0.5" step="0.5" placeholder="e.g. 2.5" required>
+
+</div>
+
+<div class="box">
+
+<label for="days">Days Left</label>
+
+<input type="number" id="days" min="0" step="1" placeholder="e.g. 20" required>
+
+</div>
+
+</div>
+
+<button type="button" onclick="predictFare()" class="predict-btn">
+
+Predict Fare
+
+</button>
+
+</section>
+<!-- ===================== PREDICTION RESULT ===================== -->
+
+<section id="result" class="prediction-section">
+
+    <h1>Prediction Result</h1>
+
+    <div class="prediction-card">
+
+        <i class="fa-solid fa-indian-rupee-sign prediction-icon"></i>
+
+        <h2 id="fare" aria-live="polite">₹ 0</h2>
+
+        <p id="recommendation">
+
+            Click <b>Predict Fare</b> to see the estimated flight ticket price.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===================== AIRLINE PRICE COMPARISON ===================== -->
+
+<section id="prices" class="price-table">
+
+    <h1>Airline Price Comparison</h1>
+
+    <p>Average Flight Fare (Cheapest → Highest)</p>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Rank</th>
+
+                <th>Airline</th>
+
+                <th>Average Price</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>1</td>
+
+                <td>AirAsia</td>
+
+                <td>₹4,800</td>
+
+                <td><span class="cheap">Cheapest</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>2</td>
+
+                <td>SpiceJet</td>
+
+                <td>₹5,200</td>
+
+                <td><span class="best">Best Value</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>3</td>
+
+                <td>IndiGo</td>
+
+                <td>₹5,900</td>
+
+                <td><span class="normal">Average</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>4</td>
+
+                <td>Air India</td>
+
+                <td>₹7,100</td>
+
+                <td><span class="high">High</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>5</td>
+
+                <td>Vistara</td>
+
+                <td>₹8,300</td>
+
+                <td><span class="premium">Premium</span></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- ===================== TOP AIRLINES ===================== -->
+
+<section class="airlines">
+
+    <h1>Top Airlines</h1>
+
+    <div class="airline-container">
+
+        <div class="airline-card">
+
+            <img src="images/airasia.png" alt="AirAsia logo">
+
+            <h3>AirAsia</h3>
+
+            <p>Average Fare</p>
+
+            <h2>₹4,800</h2>
+
+            <button>Cheapest</button>
+
+        </div>
+
+        <div class="airline-card">
+
+            <img src="images/spicejet.png" alt="SpiceJet logo">
+
+            <h3>SpiceJet</h3>
+
+            <p>Average Fare</p>
+
+            <h2>₹5,200</h2>
+
+            <button>Budget</button>
+
+        </div>
+
+        <div class="airline-card">
+
+            <img src="images/indigo.png" alt="IndiGo logo">
+
+            <h3>IndiGo</h3>
+
+            <p>Average Fare</p>
+
+            <h2>₹5,900</h2>
+
+            <button>Popular</button>
+
+        </div>
+
+        <div class="airline-card">
+
+            <img src="images/airindia.png" alt="Air India logo">
+
+            <h3>Air India</h3>
+
+            <p>Average Fare</p>
+
+            <h2>₹7,100</h2>
+
+            <button>Premium</button>
+
+        </div>
+
+        <div class="airline-card">
+
+            <img src="images/vistara.png" alt="Vistara logo">
+
+            <h3>Vistara</h3>
+
+            <p>Average Fare</p>
+
+            <h2>₹8,300</h2>
+
+            <button>Luxury</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== PRICE TREND ===================== -->
+
+<section class="trend">
+
+    <h1>Flight Price Trend</h1>
+
+    <p>
+
+        Prices generally increase as the departure date approaches.
+
+        Booking your ticket 20–30 days before departure often provides
+        better prices.
+
+    </p>
+
+    <img src="images/dashboard.png" alt="Dashboard">
+
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+
+<section id="features" class="features">
+
+    <h1>Why Choose Our System?</h1>
+
+    <p>Smart AI-powered flight fare prediction with advanced analytics.</p>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-plane-departure"></i>
+            <h3>Flight Fare Prediction</h3>
+            <p>Predict ticket prices using Machine Learning algorithms.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Price Trend Analysis</h3>
+            <p>Visualize historical ticket price trends.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-wallet"></i>
+            <h3>Cheapest Airline</h3>
+            <p>Compare airlines and choose the most affordable option.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-clock"></i>
+            <h3>Best Booking Time</h3>
+            <p>Find the ideal time to book your flight.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>AI Recommendation</h3>
+            <p>Receive "Book Now" or "Wait" suggestions.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Cloud Ready</h3>
+            <p>Deploy easily on cloud platforms.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== MACHINE LEARNING WORKFLOW ===================== -->
+
+<section class="workflow">
+
+    <h1>Machine Learning Workflow</h1>
+
+    <div class="workflow-container">
+
+        <div class="step">
+            <h2>1</h2>
+            <h4>Collect Dataset</h4>
+            <p>Flight booking dataset from Kaggle.</p>
+        </div>
+
+        <div class="step">
+            <h2>2</h2>
+            <h4>Data Cleaning</h4>
+            <p>Remove missing values and duplicates.</p>
+        </div>
+
+        <div class="step">
+            <h2>3</h2>
+            <h4>EDA</h4>
+            <p>Analyze airline prices and booking trends.</p>
+        </div>
+
+        <div class="step">
+            <h2>4</h2>
+            <h4>Model Training</h4>
+            <p>Train a Random Forest Regressor model.</p>
+        </div>
+
+        <div class="step">
+            <h2>5</h2>
+            <h4>Prediction</h4>
+            <p>Predict flight ticket prices accurately.</p>
+        </div>
+
+        <div class="step">
+            <h2>6</h2>
+            <h4>Recommendation</h4>
+            <p>Suggest "Book Now" or "Wait".</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== PROJECT MODULES ===================== -->
+
+<section class="modules">
+
+    <h1>Project Modules</h1>
+
+    <div class="module-box">
+
+        <div class="module">Dataset Collection</div>
+
+        <div class="module">Data Cleaning</div>
+
+        <div class="module">Exploratory Data Analysis</div>
+
+        <div class="module">Visualization</div>
+
+        <div class="module">Machine Learning Model</div>
+
+        <div class="module">Price Prediction</div>
+
+        <div class="module">Recommendation System</div>
+
+        <div class="module">Dashboard</div>
+
+    </div>
+
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+
+<section id="about" class="about">
+
+    <div class="about-text">
+
+        <h1>About This Project</h1>
+
+        <p>
+
+            Smart Flight Fare Analytics and Booking Recommendation System
+            is a Machine Learning project developed to help travelers
+            predict flight ticket prices.
+
+        </p>
+
+        <p>
+
+            The system analyzes historical airline booking data,
+            predicts ticket prices, compares airlines,
+            and recommends the best booking time.
+
+        </p>
+
+    </div>
+
+    <div class="about-image">
+
+        <img src="images/dashboard.png" alt="Dashboard">
+
+    </div>
+
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+
+<section id="contact" class="contact">
+
+    <h1>Contact</h1>
+
+    <div class="contact-box">
+
+        <div>
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <h3>Email</h3>
+
+            <p>farematryx@gmail.com</p>
+
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-phone"></i>
+
+            <h3>Phone</h3>
+
+            <p>+91 9876543210</p>
+
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h3>Location</h3>
+
+            <p>Bhubaneswar, Odisha</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+
+<footer>
+
+    <h2>✈ Farematryx</h2>
+
+    <p>
+
+        Smart Flight Fare Analytics and Booking Recommendation System
+
+    </p>
+
+    <p>
+
+        Built using HTML, CSS, JavaScript, Python &amp; Machine Learning
+
+    </p>
+
+    <div class="social-icons">
+
+        <i class="fab fa-github"></i>
+
+        <i class="fab fa-linkedin"></i>
+
+        <i class="fab fa-instagram"></i>
+
+        <i class="fab fa-twitter"></i>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+        © 2026 All Rights Reserved | Final Year Project
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

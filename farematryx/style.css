@@ -1,0 +1,1300 @@
+/* ===========================================
+   GLOBAL STYLES
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#f4f8fb;
+
+    color:#333;
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================================
+   NAVIGATION BAR
+=========================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    z-index:999;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-right:15px;
+
+    border:3px solid white;
+
+    background:white;
+
+}
+
+.logo h2{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+}
+
+.navbar ul li{
+
+    margin-left:30px;
+
+}
+
+.navbar ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.navbar ul li a:hover{
+
+    color:#FFD700;
+
+}
+
+/* ===========================================
+   HERO SECTION
+=========================================== */
+
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    background:url("images/flight.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+.overlay{
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding-top:80px;
+
+}
+
+.overlay h1{
+
+    font-size:65px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.overlay p{
+
+    width:65%;
+
+    font-size:22px;
+
+    line-height:36px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+/* ===========================================
+   BUTTONS
+=========================================== */
+
+.btn{
+
+    background:#ff9800;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#ff5722;
+
+    transform:translateY(-5px);
+
+}
+
+.btn2{
+
+    background:white;
+
+    color:#0066cc;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.btn2:hover{
+
+    background:#0066cc;
+
+    color:white;
+
+}
+
+/* ===========================================
+   STATISTICS SECTION
+=========================================== */
+
+.stats{
+
+    width:90%;
+
+    margin:70px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:white;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+    transition:.3s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stat-card i{
+
+    font-size:45px;
+
+    color:#0077ff;
+
+    margin-bottom:15px;
+
+}
+
+.stat-card h2{
+
+    font-size:35px;
+
+    color:#003366;
+
+}
+
+.stat-card p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+/* ===========================================
+   BOOKING SECTION
+=========================================== */
+
+.booking{
+
+    width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+
+}
+
+.booking h1{
+
+    font-size:42px;
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.booking p{
+
+    color:#666;
+
+    margin-bottom:40px;
+
+    font-size:18px;
+
+}
+
+.booking-form{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:left;
+
+}
+
+.box label{
+
+    font-weight:600;
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.box input{
+
+    padding:14px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.box select{
+
+    padding:14px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.box input:focus{
+
+    border-color:#007bff;
+
+}
+
+.box select:focus{
+
+    border-color:#007bff;
+
+}
+
+.predict-btn{
+
+    margin-top:35px;
+
+    padding:16px 45px;
+
+    background:#007bff;
+
+    color:white;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.predict-btn:hover{
+
+    background:#0056b3;
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================================
+   PREDICTION RESULT
+=========================================== */
+
+.prediction-section{
+
+    width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+
+}
+
+.prediction-section h1{
+
+    font-size:42px;
+
+    color:#003366;
+
+    margin-bottom:35px;
+
+}
+
+.prediction-card{
+
+    width:420px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.prediction-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.prediction-icon{
+
+    font-size:60px;
+
+    color:#28a745;
+
+    margin-bottom:20px;
+
+}
+
+#fare{
+
+    font-size:48px;
+
+    color:#007bff;
+
+    margin-bottom:20px;
+
+}
+
+#recommendation{
+
+    font-size:20px;
+
+    color:#444;
+
+    line-height:32px;
+
+}
+
+/* ===========================================
+   RECOMMENDATION COLORS
+=========================================== */
+
+.book-now{
+
+    color:#28a745;
+
+    font-weight:bold;
+
+}
+
+.wait{
+
+    color:#ff9800;
+
+    font-weight:bold;
+
+}
+
+.high-price{
+
+    color:#dc3545;
+
+    font-weight:bold;
+
+}
+/* ===========================================
+   AIRLINE PRICE TABLE
+=========================================== */
+
+.price-table{
+
+    width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+
+}
+
+.price-table h1{
+
+    font-size:42px;
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.price-table p{
+
+    font-size:18px;
+
+    color:#666;
+
+    margin-bottom:35px;
+
+}
+
+.price-table table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.price-table th{
+
+    background:#0066cc;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:18px;
+
+}
+
+.price-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #ddd;
+
+    font-size:17px;
+
+}
+
+.price-table tr:hover{
+
+    background:#f2f9ff;
+
+}
+
+/* ===============================
+BADGES
+================================ */
+
+.cheap{
+
+    background:#28a745;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+}
+
+.best{
+
+    background:#17a2b8;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+}
+
+.normal{
+
+    background:#ffc107;
+
+    color:black;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+}
+
+.high{
+
+    background:#ff5722;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+}
+
+.premium{
+
+    background:#8e44ad;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+}
+
+/* ===========================================
+   AIRLINE CARDS
+=========================================== */
+
+.airlines{
+
+    width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+
+}
+
+.airlines h1{
+
+    font-size:42px;
+
+    color:#003366;
+
+    margin-bottom:40px;
+
+}
+
+.airline-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.airline-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.airline-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.airline-card img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+}
+
+.airline-card h3{
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.airline-card p{
+
+    color:#666;
+
+}
+
+.airline-card h2{
+
+    color:#007bff;
+
+    margin:15px 0;
+
+}
+
+.airline-card button{
+padding:12px 25px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#007bff;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.airline-card button:hover{
+
+    background:#004aad;
+
+}
+
+/* ===========================================
+   DASHBOARD
+=========================================== */
+
+.trend{
+
+    width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+
+}
+
+.trend h1{
+
+    font-size:42px;
+
+    color:#003366;
+
+    margin-bottom:20px;
+
+}
+
+.trend p{
+
+    font-size:18px;
+
+    width:75%;
+
+    margin:auto;
+
+    color:#666;
+
+    line-height:32px;
+
+}
+
+.trend img{
+
+    width:90%;
+
+    margin-top:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    transition:.4s;
+
+}
+
+.trend img:hover{
+
+    transform:scale(1.02);
+
+}
+/* ===========================================
+   FEATURES SECTION
+=========================================== */
+
+.features{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.features h1{
+    font-size:42px;
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.features > p{
+    color:#666;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.feature-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.feature-card{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-12px);
+    background:#007BFF;
+    color:#fff;
+}
+
+.feature-card:hover h3,
+.feature-card:hover p,
+.feature-card:hover i{
+    color:#fff;
+}
+
+.feature-card i{
+    font-size:50px;
+    color:#007BFF;
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+    margin-bottom:15px;
+    color:#003366;
+}
+
+/* ===========================================
+   WORKFLOW
+=========================================== */
+
+.workflow{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.workflow h1{
+    font-size:42px;
+    color:#003366;
+    margin-bottom:40px;
+}
+
+.workflow-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.step:hover{
+    transform:scale(1.05);
+}
+
+.step h2{
+    width:60px;
+    height:60px;
+    background:#007BFF;
+    color:white;
+    border-radius:50%;
+    margin:auto;
+line-height:60px;
+    margin-bottom:20px;
+}
+
+.step h4{
+    color:#003366;
+    margin-bottom:10px;
+}
+
+/* ===========================================
+   PROJECT MODULES
+=========================================== */
+
+.modules{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.modules h1{
+    font-size:42px;
+    color:#003366;
+    margin-bottom:40px;
+}
+
+.module-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.module{
+    background:linear-gradient(135deg,#007BFF,#00C6FF);
+    color:white;
+    padding:22px;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.module:hover{
+    transform:translateY(-8px);
+}
+
+/* ===========================================
+   ABOUT
+=========================================== */
+
+.about{
+    width:90%;
+    margin:90px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text h1{
+    font-size:42px;
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#666;
+    line-height:32px;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* ===========================================
+   CONTACT
+=========================================== */
+
+.contact{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.contact h1{
+    font-size:42px;
+    color:#003366;
+    margin-bottom:40px;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.contact-box div{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.contact-box div:hover{
+    transform:translateY(-10px);
+}
+
+.contact-box i{
+    font-size:45px;
+    color:#007BFF;
+    margin-bottom:15px;
+}
+
+/* ===========================================
+   FOOTER
+=========================================== */
+
+footer{
+    background:url("images/worldmap.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+    margin-top:80px;
+    position:relative;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.75);
+}
+
+footer>*{
+    position:relative;
+    z-index:2;
+}
+
+footer h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+footer p{
+    margin:10px 0;
+}
+
+.social-icons{
+    margin:25px 0;
+}
+
+.social-icons i{
+    font-size:28px;
+    margin:0 15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.social-icons i:hover{
+    color:#FFD700;
+    transform:scale(1.2);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+@media(max-width:992px){
+
+.navbar{
+    flex-direction:column;
+    padding:15px;
+}
+
+.navbar ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:15px;
+}
+
+.stats{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.booking-form{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.overlay h1{
+    font-size:38px;
+}
+
+.overlay p{
+    width:90%;
+    font-size:18px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.booking-form{
+    grid-template-columns:1fr;
+}
+
+.price-table{
+    overflow-x:auto;
+}
+
+.feature-container,
+.workflow-container,
+.module-box,
+.contact-box,
+.airline-container{
+    grid-template-columns:1fr;
+}
+
+.prediction-card{
+    width:100%;
+}
+
+}
+
+/* ===========================================
+   ANCHOR OFFSET (fixed navbar)
+=========================================== */
+
+section,header{scroll-margin-top:110px;}
+
+/* ===========================================
+   SCROLL REVEAL (added by script.js)
+=========================================== */
+
+.reveal{opacity:0;transform:translateY(60px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ===========================================
+   BUTTON RIPPLE, BACK-TO-TOP, THEME BUTTON
+=========================================== */
+
+button{position:relative;overflow:hidden;}
+
+.ripple{position:absolute;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.6);
+    transform:translate(-50%,-50%) scale(0);animation:ripple .6s linear;pointer-events:none;}
+
+@keyframes ripple{to{transform:translate(-50%,-50%) scale(12);opacity:0;}}
+
+#topBtn{position:fixed;bottom:30px;right:30px;width:55px;height:55px;border-radius:50%;border:none;
+    background:#007bff;color:white;font-size:22px;cursor:pointer;display:none;z-index:998;
+    box-shadow:0 6px 15px rgba(0,0,0,.3);}
+
+.theme-btn{width:38px;height:38px;border-radius:50%;border:2px solid white;background:transparent;
+    color:white;font-size:16px;cursor:pointer;}
+
+/* ===========================================
+   DARK MODE
+=========================================== */
+
+body.dark-mode{background:#111827;color:#e5e7eb;}
+body.dark-mode .stat-card,
+body.dark-mode .booking-form,
+body.dark-mode .prediction-card,
+body.dark-mode .price-table table,
+body.dark-mode .airline-card,
+body.dark-mode .feature-card,
+body.dark-mode .step,
+body.dark-mode .contact-box div{background:#1f2937;}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode .box label{color:#93c5fd;}
+body.dark-mode p,
+body.dark-mode #recommendation,
+body.dark-mode .price-table td{color:#cbd5e1;}
+body.dark-mode .box input,
+body.dark-mode .box select{background:#111827;color:#e5e7eb;border-color:#374151;}
+body.dark-mode .price-table td{border-bottom-color:#374151;}
+body.dark-mode .price-table tr:hover{background:#273244;}
+body.dark-mode .book-now{color:#4ade80;}
+body.dark-mode .wait{color:#fbbf24;}
+body.dark-mode .high-price{color:#f87171;}
+
+/* ===========================================
+   EXTRA RESPONSIVE FIXES
+=========================================== */
+
+@media(max-width:992px){
+    .overlay{padding-top:150px;}
+}
+
+@media(max-width:768px){
+    .price-table table{min-width:520px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .reveal{transition:none;}
+    *{scroll-behavior:auto !important;}
+}
