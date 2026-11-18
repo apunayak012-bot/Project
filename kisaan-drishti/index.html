@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisaan Drishti | A Vision for Every Farmer</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<script>try{if(!localStorage.getItem("kd_session"))location.replace("login.html")}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><img src="images/logo.svg" alt="Logo"><h2>Kisaan Drishti</h2></div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#profile">My Farm</a></li>
+    <li><a href="#disease">Disease</a></li>
+    <li><a href="#weather">Weather</a></li>
+    <li><a href="#crop">Crops</a></li>
+    <li><a href="#health">Health</a></li>
+    <li><a href="#community">Alerts</a></li>
+    <li><a href="#analytics">CropFit</a></li>
+    <li class="user-chip"><span id="userName"></span><button type="button" id="logoutBtn" class="logout-btn">Log out</button></li>
+    <li><button type="button" id="themeBtn" class="theme-btn" aria-label="Toggle dark mode">🌙</button></li>
+  </ul>
+</nav>
+
+<header id="home" class="hero">
+  <h1>Kisaan Drishti</h1>
+  <p class="tagline">A Vision for Every Farmer, A Better Tomorrow for Agriculture.</p>
+  <p>Detect plant diseases, plan irrigation, choose the right crop and predict yield &mdash; all from data, not guesswork.</p>
+  <a href="#disease" class="btn">Get Started</a>
+</header>
+
+<section class="stats">
+  <div class="stat-card"><h2>38+</h2><p>Disease Classes (PlantVillage)</p></div>
+  <div class="stat-card"><h2>7</h2><p>Smart Modules</p></div>
+  <div class="stat-card"><h2>20+</h2><p>Crops Analysed</p></div>
+  <div class="stat-card"><h2>24x7</h2><p>Weather Monitoring</p></div>
+</section>
+
+
+<!-- MY FARM PROFILE -->
+<section id="profile" class="panel">
+  <h2>👨‍🌾 My Farm Details</h2>
+  <p class="sub">Enter your details once &mdash; they auto-fill the other tools. Press <b>Reset</b> to clear everything and enter new information.</p>
+  <form id="profileForm" class="form-row" novalidate>
+    <div class="field"><label for="pName">Farmer Name</label><input id="pName" placeholder="Ramesh Patil"></div>
+    <div class="field"><label for="pId">Farmer ID</label><input id="pId" placeholder="F101"></div>
+    <div class="field"><label for="pPhone">Mobile</label><input id="pPhone" inputmode="numeric" maxlength="10" placeholder="9876543210"></div>
+    <div class="field"><label for="pVillage">Village</label><input id="pVillage" placeholder="Rampur"></div>
+    <div class="field"><label for="pCity">District / City</label><input id="pCity" placeholder="Pune"></div>
+    <div class="field"><label for="pAcres">Land (acres)</label><input type="number" id="pAcres" min="0.1" step="0.1" placeholder="2"></div>
+    <div class="field"><label for="pSoil">Soil Type</label><select id="pSoil"><option value="">Select</option><option>Black</option><option>Red</option><option>Alluvial</option><option>Sandy</option><option>Clay</option><option>Loamy</option></select></div>
+    <div class="field"><label for="pSeason">Season</label><select id="pSeason"><option value="">Select</option><option>Kharif</option><option>Rabi</option><option>Zaid</option></select></div>
+    <div class="field"><label for="pCrop">Main Crop</label><select id="pCrop"><option value="">Select</option></select></div>
+    <div class="profile-actions">
+      <button type="submit" class="btn">💾 Save Details</button>
+      <button type="button" id="resetProfile" class="btn reset-btn">🔄 Reset</button>
+    </div>
+  </form>
+  <div id="profileMsg" class="profile-msg" role="status"></div>
+</section>
+
+<section class="gallery">
+  <h2>Our Farmers, Our Pride</h2>
+  <div class="gallery-grid">
+    <figure><img src="images/farm/farmers_sunset.jpg" alt="Farmers walking through green rice fields at sunset" loading="lazy"><figcaption>Fields of hope at sunrise</figcaption></figure>
+    <figure><img src="images/farm/farmer_silhouette.jpg" alt="Silhouette of a farmer walking through golden crops" loading="lazy"><figcaption>Every farmer, every day</figcaption></figure>
+    <figure><img src="images/farm/paddy_workers.jpg" alt="Farmers working together in a paddy field" loading="lazy"><figcaption>Growing together</figcaption></figure>
+  </div>
+</section>
+
+<section class="features">
+  <h2>What Kisaan Drishti Does</h2>
+  <div class="feature-grid">
+    <a href="#disease" class="feature-card"><img src="images/icons/disease.svg" alt=""><h3>Disease Detection</h3><p>Upload a leaf photo and get diagnosis plus treatment.</p></a>
+    <a href="#weather" class="feature-card"><img src="images/icons/weather.svg" alt=""><h3>Weather &amp; Irrigation</h3><p>Real-time alerts and smart watering advice.</p></a>
+    <a href="#crop" class="feature-card"><img src="images/icons/crop.svg" alt=""><h3>Crop &amp; Yield</h3><p>Best crops for your soil, with profit estimate.</p></a>
+    <a href="#health" class="feature-card"><img src="images/icons/health.svg" alt=""><h3>Farm Health Score</h3><p>One score out of 100 for your farm.</p></a>
+    <a href="#community" class="feature-card"><img src="images/icons/community.svg" alt=""><h3>Community Alerts</h3><p>Know when disease spreads nearby.</p></a>
+    <a href="#analytics" class="feature-card"><img src="images/icons/analytics.svg" alt=""><h3>CropFit Analytics</h3><p>Best area, time and weather per crop.</p></a>
+  </div>
+</section>
+
+<section class="preview">
+  <h2>Farm Dashboard Preview</h2>
+  <img src="images/dashboard.png" alt="Kisaan Drishti dashboard preview">
+</section>
+
+<!-- FEATURE 1 -->
+<section id="disease" class="panel">
+  <h2>🦠 Disease Detection</h2>
+  <p class="sub">Upload a crop leaf photo. The AI model returns the likely disease and a treatment.</p>
+  <div class="two-col">
+    <div>
+      <label class="upload-btn">📷 Upload Image
+        <input type="file" id="leafInput" accept="image/*" hidden>
+      </label>
+      <div class="field"><label>Your Farmer ID</label><input id="dFarmer" placeholder="e.g. F101"></div>
+      <div class="field"><label>Village</label><input id="dVillage" placeholder="e.g. Rampur"></div>
+      <div class="samples"><p>No leaf photo handy? Try a sample:</p>
+        <img src="images/samples/healthy.png" alt="Healthy leaf" data-label="Healthy">
+        <img src="images/samples/brown_spot.png" alt="Brown spot leaf" data-label="Brown Spot">
+        <img src="images/samples/leaf_blight.png" alt="Leaf blight" data-label="Leaf Blight">
+        <img src="images/samples/powdery_mildew.png" alt="Powdery mildew" data-label="Powdery Mildew">
+        <img src="images/samples/leaf_rust.png" alt="Leaf rust" data-label="Leaf Rust"></div>
+      <img id="leafPreview" alt="Leaf preview" hidden>
+    </div>
+    <div id="diseaseResult" class="result-box">No image analysed yet.</div>
+  </div>
+</section>
+
+<!-- FEATURE 2 -->
+<section id="weather" class="panel alt">
+  <h2>🌦 Weather Alerts &amp; 💧 Smart Irrigation</h2>
+  <div class="form-row">
+    <div class="field"><label>City / Village</label><input id="city" value="Pune"></div>
+    <div class="field"><label>Soil Moisture (%)</label><input type="number" id="moisture" value="35" min="0" max="100"></div>
+    <div class="field"><label>Crop</label><select id="irrCrop"></select></div>
+    <button class="btn" onclick="getWeather()">Check Weather</button>
+  </div>
+  <div id="weatherOut" class="result-box">Press “Check Weather”.</div>
+</section>
+
+<!-- FEATURE 3 -->
+<section id="crop" class="panel">
+  <h2>🌾 Crop Recommendation &amp; 📈 Yield Prediction</h2>
+  <div class="form-row">
+    <div class="field"><label>Soil Type</label>
+      <select id="soil"><option>Black</option><option>Red</option><option>Alluvial</option><option>Sandy</option><option>Clay</option><option>Loamy</option></select></div>
+    <div class="field"><label>Season</label>
+      <select id="season"><option>Kharif</option><option>Rabi</option><option>Zaid</option></select></div>
+    <div class="field"><label>Rainfall (mm/yr)</label><input type="number" id="rain" value="800" min="0"></div>
+    <div class="field"><label>Temperature (°C)</label><input type="number" id="temp" value="27"></div>
+    <div class="field"><label>Land (acres)</label><input type="number" id="acres" value="2" min="0.1" step="0.1"></div>
+    <button class="btn" onclick="recommendCrop()">Recommend</button>
+  </div>
+  <div id="cropOut" class="result-box">Fill the form and press Recommend.</div>
+</section>
+
+<!-- FEATURE 4 -->
+<section id="health" class="panel alt">
+  <h2>❤️ Farm Health Score</h2>
+  <div class="two-col">
+    <div>
+      <div class="slider"><label>Soil (max 30): <b id="vSoil">25</b></label><input type="range" id="sSoil" min="0" max="30" value="25"></div>
+      <div class="slider"><label>Weather (max 25): <b id="vWeather">20</b></label><input type="range" id="sWeather" min="0" max="25" value="20"></div>
+      <div class="slider"><label>Disease (max 20): <b id="vDisease">15</b></label><input type="range" id="sDisease" min="0" max="20" value="15"></div>
+      <div class="slider"><label>Irrigation (max 25): <b id="vIrr">20</b></label><input type="range" id="sIrr" min="0" max="25" value="20"></div>
+    </div>
+    <div class="score-card"><div id="scoreNum">80/100</div><div id="scoreStatus" class="badge good">GOOD</div></div>
+  </div>
+</section>
+
+<!-- FEATURE 5 -->
+<section id="community" class="panel">
+  <h2>🚨 Community Disease Alerts</h2>
+  <div id="alertBanner"></div>
+  <div class="form-row">
+    <div class="field"><label>Farmer ID</label><input id="rFarmer" placeholder="F205"></div>
+    <div class="field"><label>Village</label><input id="rVillage" placeholder="Rampur"></div>
+    <div class="field"><label>Disease</label><input id="rDisease" placeholder="Brown Spot"></div>
+    <div class="field"><label>Date</label><input type="date" id="rDate"></div>
+    <button class="btn" onclick="addReport()">Submit Report</button>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>Farmer ID</th><th>Village</th><th>Disease</th><th>Date</th></tr></thead><tbody id="reportRows"></tbody></table></div>
+  <button class="btn ghost" onclick="resetReports()">Reset demo data</button>
+</section>
+
+<!-- FEATURE 6 -->
+<section id="analytics" class="panel alt">
+  <h2>📊 CropFit Analytics</h2>
+  <p class="sub">Best area, time and weather for each crop.</p>
+  <div class="form-row">
+    <div class="field"><label>Filter by Season</label>
+      <select id="fSeason" onchange="renderCropFit()"><option>All</option><option>Kharif</option><option>Rabi</option><option>Zaid</option></select></div>
+  </div>
+  <div id="fitBars"></div>
+  <div class="table-wrap"><table><thead><tr><th>Crop</th><th>Best Area / Soil</th><th>Best Time</th><th>Ideal Weather</th><th>Profit/acre</th></tr></thead><tbody id="fitRows"></tbody></table></div>
+</section>
+
+<footer><p>© 2026 Kisaan Drishti &middot; A Vision for Every Farmer, A Better Tomorrow for Agriculture.</p></footer>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

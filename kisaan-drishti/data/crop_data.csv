@@ -1,0 +1,9 @@
+crop,soil,season,rain_min_mm,rain_max_mm,temp_min_c,temp_max_c,yield_q_per_acre,price_rs_per_q,cost_rs_per_acre
+Rice,Alluvial/Clay,Kharif,1000,2000,22,32,22,2200,30000
+Wheat,Alluvial/Loamy,Rabi,400,900,12,25,18,2300,22000
+Cotton,Black,Kharif,600,1100,21,32,8,6500,28000
+Maize,Loamy/Red,Kharif,500,1000,18,30,20,2000,20000
+Groundnut,Sandy/Red,Kharif,500,1000,22,32,10,5800,24000
+Soybean,Black/Loamy,Kharif,600,1000,20,30,9,4600,18000
+Chickpea,Black/Loamy,Rabi,400,700,15,28,7,5400,16000
+Mustard,Alluvial/Sandy,Rabi,300,700,10,25,6,5600,14000
